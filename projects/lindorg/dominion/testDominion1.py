@@ -24,7 +24,6 @@ nC = -10 + 10 * len(player_names)
 #Define box
 box = testUtility.defineBox(nV, 10)
 
-
 supply_order = {0:['Curse','Copper'],2:['Estate','Cellar','Chapel','Moat'],
                 3:['Silver','Chancellor','Village','Woodcutter','Workshop'],
                 4:['Gardens','Bureaucrat','Feast','Militia','Moneylender','Remodel','Smithy','Spy','Thief','Throne Room'],
@@ -37,22 +36,14 @@ random.shuffle(boxlist)
 random10 = boxlist[:10]
 supply = defaultdict(list,[(k,box[k]) for k in random10])
 
-
 #The supply always has these cards
 testUtility.supplyPile(supply, nV, nC, player_names)
 
 #initialize the trash
 trash = []
 
-#Costruct the Player objects
-players = []
-for name in player_names:
-    if name[0]=="*":
-        players.append(Dominion.ComputerPlayer(name[1:]))
-    elif name[0]=="^":
-        players.append(Dominion.TablePlayer(name[1:]))
-    else:
-        players.append(Dominion.Player(name))
+#Construct the Player objects
+players = testUtility.setPlayers(player_names)
 
 #Play the game
 turn  = 0

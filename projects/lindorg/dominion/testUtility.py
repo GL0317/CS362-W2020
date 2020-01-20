@@ -38,6 +38,7 @@ def defineBox(victoryCards, cardNum):
     box["Throne Room"] = [Dominion.Throne_Room()] * cardNum
     return box
 
+
 # Creates a supply pile
 def supplyPile(supply, victoryCards, curseCards, playerNames):
     # The supply always has these cards
@@ -52,3 +53,17 @@ def supplyPile(supply, victoryCards, curseCards, playerNames):
     supply["Duchy"] = [Dominion.Duchy()] * victoryCards
     supply["Province"] = [Dominion.Province()] * victoryCards
     supply["Curse"] = [Dominion.Curse()] * curseCards
+
+
+#Costruct the Player objects
+def setPlayers(playerNames):
+    players = []
+    for name in playerNames:
+        if name[0] == "*":
+            players.append(Dominion.ComputerPlayer(name[1:]))
+        elif name[0] == "^":
+            players.append(Dominion.TablePlayer(name[1:]))
+        else:
+            players.append(Dominion.Player(name))
+    return players
+
