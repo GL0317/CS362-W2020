@@ -1,4 +1,4 @@
-# Dominion
+#Gerson Lindor, lindorg
 complete Dominion game in python, text-only
 
 Dominion is a popular deck-building game, for 2-4 players.  Each card in the deck gives a player points or money, or lets a player perform a certain action when played.  Each player tries to get the most points before the end of the game.  As of July 2016, I have only programmed the base version.
