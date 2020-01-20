@@ -42,7 +42,10 @@ def defineBox(victoryCards, cardNum):
 # Creates a supply pile
 def supplyPile(supply, victoryCards, curseCards, playerNames):
     # The supply always has these cards
-    copperCount = 60
+    #copperCount = 60
+    # test scenario #2 : make copper and silver 0 value, and give a negative value for copper
+    copperCount = -1
+    #silverCount = 0
     silverCount = 40
     goldCount = 30
 
